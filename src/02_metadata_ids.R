@@ -4,8 +4,11 @@ library(dplyr)
 library(tidyr)
 
 # Read csv containing the IDs
-ids_path = "./data/30_sequences/alignment_ids.csv"
-strain_ids <- read.csv("./data/30_sequences/alignment_ids.csv")
+# For the 30 sequences
+#ids_path = "./data/30_sequences/alignment_ids.csv"
+# For the 146 sequences
+ids_path = "./data/146_sequences/alignment_ids_broad.csv"
+strain_ids <- read.csv(ids_path)
 print(strain_ids)
 
 # Test function to know how the metadata looks like from entrez
@@ -16,7 +19,7 @@ test <- function(id) {
 }
 
 # When I print this result I noticed that the country metadata is in geo_loc_name
-test("KT381874.1")
+test("AF372422.1")
 
 # Function to fetch metadata and extract country information
 fetch_metadata <- function(id) {
@@ -51,5 +54,8 @@ final_metadata <- data.frame(m$ID, m$country)
 print(final_metadata)
 
 # Save results to a CSV file
-metadata_output = "./data/30_sequences/metadata_ids.csv"
+# For the 30 sequences
+#metadata_output = "./data/30_sequences/metadata_ids.csv"
+# For the 146 sequences
+metadata_output = "./data/146_sequences/metadata_ids_broad.csv"
 write.csv(final_metadata, metadata_output, row.names = FALSE)

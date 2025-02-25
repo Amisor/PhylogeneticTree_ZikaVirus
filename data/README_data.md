@@ -1,25 +1,35 @@
-# Data Files description
+# Data
 
-The following script contains a descirption of the files that this directory contains 
+The data directory is divided into two directories: 30_sequences and 146_sequences. The first directory contains the information related to the GenBank query that 
+exaclty macthes the first result of NCBI BLAST, while the 146_sequences contains the data related to the GenBank query with a broader term of the first result of NCBI BLAST.
 
 ## 30_sequences
 
-The file correspond to the output of the 30 sequences from the GenBank query : "Zika virus envelope protein (E) gene".
-Note that GenBank queries are indifferent about capital using capital letter. sequences length were restricted from 1 to 1000 nucleotides.
+`sequence.fasta`: The 30 sequences from the GenBank query "Zika virus envelope protein (E) gene".
+Note that GenBank queries are not case-sensitive. Sequences length were restricted from 1 to 1000 nucleotides.
 
-The aligment of the 30 sequences resulting from MUSCLE. 
+`muscle-I20250220-192936-0490-3990099-p1m.aln-fasta`: Aligment of the 30 sequences resulting from MUSCLE with Pearson/FASTA output format.
 
-The output tree of SimplyPhylogeny with default parameters with Neighbor Joining analysis. 
+`simple_phylogeny-I20250220-194601-0208-89474678-p1m.tree`: Phylogeny tree of the 30 aligneed sequences resulting from Simply Phylogeny with default parameters and Neighbor-Joining analysis (
+Phylip tree format, distance correction off, exclude gaps off, clustering methods Neighbor-joining, percent identity matrix off).
 
-The metadata created by running codes 01_ to 0_3 of the src directory. 
+`alignment_ids.csv`: Accesion IDs obtained from the aligmnet file. It's the output of the code 01_accession_ids.R 
 
-## 146 sequences
+`metadata_ids.csv`: Metadata containing the country of origin from the accession IDs. It's the output of the code 02_metadata_ids.R.
 
-The file correspond to the output of the 146 sequences from the GenBank query : "Zika virus envelope protein (E) gene".
-Note that GenBank queries are indifferent about capital using capital letter. sequences length were restricted from 1 to 1000 nucleotides.
+`iTOL_metadata.txt`: The metadata file for iTOL. It's the output of the code 03_iTOL_metadata.R
 
-The aligment of the 146 sequences resulting from MUSCLE. 
+## 146_sequences
 
-The output tree of SimplyPhylogeny with default parameters with Neighbor Joining analysis. 
+`sequence_broad.fasta`: The 146 sequences from the GenBank query "Zika virus envelope protein". Sequences length were restricted from 1 to 1000 nucleotides.
 
-The metadata created by running codes 01_ to 0_3 of the src directory. 
+`muscle-I20250225-135904-0600-11760939-p1m.aln-fasta`: Aligment of the 146 sequences resulting from MUSCLE with Pearson/FASTA output format.
+
+`simple_phylogeny-I20250225-140502-0931-8025153-p1m.tree`: Phylogeny tree of the 146 aligned sequences resulting from Simply Phylogeny with default parameters and Neighbor-Joining analysis (
+Phylip tree format, distance correction off, exclude gaps off, clustering methods Neighbor-joining, percent identity matrix off).
+
+`alignment_ids_broad.csv`: Accesion IDs obtained from the aligmnet file. It's the output of the code 01_accession_ids.R 
+
+`metadata_ids_broad.csv`: Metadata containing the country of origin from the accession IDs. It's the output of the code 02_metadata_ids.R.
+
+`iTOL_metadata_broad.txt`: The metadata for iTOL. It's the output of the code 03_iTOL_metadata.R
